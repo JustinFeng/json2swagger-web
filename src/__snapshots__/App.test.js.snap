@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <h1
+      className="App-title"
+    >
+      JSON to Swagger
+    </h1>
+  </header>
+  <div
+    className="App-container"
+  >
+    <div
+      className="App-grid container"
+    >
+      <div
+        className="show-grid row"
+      >
+        <div
+          className="col-md-5"
+        >
+          <div
+            className="form-group"
+          >
+            <textarea
+              className="App-textarea form-control"
+              id="jsonTextArea"
+              placeholder="Paste json data here..."
+              rows={20}
+              type={undefined}
+            />
+          </div>
+        </div>
+        <div
+          className="App-convert col-md-2"
+        >
+          <button
+            className="btn btn-success"
+            disabled={false}
+            type="button"
+          >
+            Convert
+          </button>
+        </div>
+        <div
+          className="col-md-5"
+        >
+          <div
+            className="form-group"
+          >
+            <textarea
+              className="App-textarea form-control"
+              id="swaggerTextArea"
+              readOnly={true}
+              rows={20}
+              type={undefined}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="App-feedback"
+    >
+      <a
+        href="https://github.com/JustinFeng/json2swagger-web/issues/new"
+        target="_blank"
+      >
+        Report a bug / Feedback
+      </a>
+    </div>
+  </div>
+</div>
+`;

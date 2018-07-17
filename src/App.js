@@ -1,18 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { FormGroup, FormControl, Button, Grid, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">JSON to Swagger</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <div className="App-container">
+          <Grid className="App-grid">
+            <Row className="show-grid">
+              <Col md={5}>
+                <FormGroup controlId="jsonTextArea">
+                  <FormControl componentClass="textarea" className="App-textarea" rows={20} placeholder="Paste json data here..." />
+                </FormGroup>
+              </Col>
+              <Col md={2} className="App-convert">
+                <Button bsStyle="success">Convert</Button>
+              </Col>
+              <Col md={5}>
+                <FormGroup controlId="swaggerTextArea">
+                  <FormControl componentClass="textarea" className="App-textarea" rows={20} readOnly />
+                </FormGroup>
+              </Col>
+            </Row>
+          </Grid>
+
+          <div className="App-feedback">
+            <a href="https://github.com/JustinFeng/json2swagger-web/issues/new" target="_blank">Report a bug / Feedback</a>
+          </div>
+        </div>
       </div>
     );
   }
