@@ -30,7 +30,9 @@ class App extends Component {
           </Grid>
 
           <div className="App-feedback">
-            <a href="https://github.com/JustinFeng/json2swagger-web/issues/new" target="_blank">Report a bug / Feedback</a>
+            <a href="https://github.com/JustinFeng/json2swagger-web/issues/new" rel="noopener noreferrer" target="_blank">
+              Report a bug / Feedback
+            </a>
           </div>
         </div>
       </div>
