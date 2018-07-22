@@ -1,13 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import Feedback from './index';
 
 describe('Feedback', () => {
   it('renders correctly', () => {
-    const app = renderer
-      .create(<Feedback />)
-      .toJSON();
-
-    expect(app).toMatchSnapshot();
+    expect(shallow(<Feedback />)).toMatchSnapshot();
   });
 });

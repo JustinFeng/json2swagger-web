@@ -1,13 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import Header from './index';
 
 describe('Header', () => {
   it('renders correctly', () => {
-    const app = renderer
-      .create(<Header />)
-      .toJSON();
-
-    expect(app).toMatchSnapshot();
+    expect(shallow(<Header />)).toMatchSnapshot();
   });
 });
