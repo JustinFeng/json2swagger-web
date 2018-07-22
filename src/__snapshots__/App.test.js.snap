@@ -31,9 +31,11 @@ exports[`App renders correctly 1`] = `
             <textarea
               className="App-textarea form-control"
               id="jsonTextArea"
+              onChange={[Function]}
               placeholder="Paste json data here..."
-              rows={20}
+              rows={30}
               type={undefined}
+              value=""
             />
           </div>
         </div>
@@ -42,10 +44,11 @@ exports[`App renders correctly 1`] = `
         >
           <button
             className="btn btn-success"
-            disabled={false}
+            disabled={true}
+            onClick={[Function]}
             type="button"
           >
-            Convert
+            Translate
           </button>
         </div>
         <div
@@ -58,8 +61,9 @@ exports[`App renders correctly 1`] = `
               className="App-textarea form-control"
               id="swaggerTextArea"
               readOnly={true}
-              rows={20}
+              rows={30}
               type={undefined}
+              value=""
             />
           </div>
         </div>

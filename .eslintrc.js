@@ -10,6 +10,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:jasmine/recommended"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -81,7 +82,8 @@ module.exports = {
     "func-names": "error",
     "func-style": [
       "error",
-      "declaration"
+      "declaration",
+      { "allowArrowFunctions": true }
     ],
     "function-paren-newline": "off",
     "generator-star-spacing": "error",
@@ -89,12 +91,9 @@ module.exports = {
     "guard-for-in": "error",
     "handle-callback-err": "error",
     "id-blacklist": "error",
-    "id-length": "error",
+    "id-length": "off",
     "id-match": "error",
-    "implicit-arrow-linebreak": [
-      "error",
-      "beside"
-    ],
+    "implicit-arrow-linebreak": "off",
     "indent": "off",
     "indent-legacy": "off",
     "init-declarations": "error",
@@ -161,7 +160,7 @@ module.exports = {
     "no-implicit-globals": "error",
     "no-implied-eval": "error",
     "no-inline-comments": "error",
-    "no-invalid-this": "error",
+    "no-invalid-this": "off",
     "no-iterator": "error",
     "no-label-var": "error",
     "no-labels": "error",
@@ -235,7 +234,7 @@ module.exports = {
       "error",
       "always"
     ],
-    "object-property-newline": "error",
+    "object-property-newline": "off",
     "object-shorthand": "error",
     "one-var": "error",
     "one-var-declaration-per-line": "error",
@@ -253,7 +252,7 @@ module.exports = {
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "quote-props": "error",
+    "quote-props": "off",
     "quotes": [
       "error",
       "single"
@@ -269,7 +268,7 @@ module.exports = {
       "last"
     ],
     "sort-imports": "off",
-    "sort-keys": "error",
+    "sort-keys": "off",
     "sort-vars": "error",
     "space-before-blocks": "error",
     "space-before-function-paren": "off",

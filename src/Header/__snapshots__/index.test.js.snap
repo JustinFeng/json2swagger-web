@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="App-header"
+>
+  <h1
+    className="App-title"
+  >
+    JSON to Swagger
+  </h1>
+</header>
+`;

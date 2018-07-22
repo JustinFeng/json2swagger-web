@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feedback renders correctly 1`] = `
+<div
+  className="App-feedback"
+>
+  <a
+    href="https://github.com/JustinFeng/json2swagger-web/issues/new"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Report a bug / Feedback
+  </a>
+</div>
+`;
