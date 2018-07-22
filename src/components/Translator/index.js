@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import { FormGroup, FormControl, Button, Grid, Row, Col } from 'react-bootstrap';
+import apiUrl from '../../utils/apiUrl';
 import './Translator.css';
 
 const ROWS = 30;
@@ -30,7 +31,7 @@ class Translator extends Component {
   };
 
   translate = () => {
-    fetch('http://localhost:9292/translate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: this.state.data })
+    fetch(`${apiUrl()}/translate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: this.state.data })
       .then(response => response.text())
       .then(result => this.setState({ result }));
   };
