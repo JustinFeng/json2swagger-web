@@ -20,6 +20,7 @@ exports[`Translator initialize renders 1`] = `
       <FormGroup
         bsClass="form-group"
         controlId="jsonTextArea"
+        validationState={null}
       >
         <FormControl
           bsClass="form-control"
@@ -27,8 +28,12 @@ exports[`Translator initialize renders 1`] = `
           componentClass="textarea"
           onChange={[Function]}
           placeholder="Paste json data here..."
-          rows={30}
+          rows={20}
           value=""
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
         />
       </FormGroup>
     </Col>
@@ -63,7 +68,7 @@ exports[`Translator initialize renders 1`] = `
           className="App-textarea"
           componentClass="textarea"
           readOnly={true}
-          rows={30}
+          rows={20}
           value=""
         />
       </FormGroup>
@@ -92,6 +97,7 @@ exports[`Translator input data updates state when input data is invalid 1`] = `
       <FormGroup
         bsClass="form-group"
         controlId="jsonTextArea"
+        validationState="error"
       >
         <FormControl
           bsClass="form-control"
@@ -99,8 +105,12 @@ exports[`Translator input data updates state when input data is invalid 1`] = `
           componentClass="textarea"
           onChange={[Function]}
           placeholder="Paste json data here..."
-          rows={30}
+          rows={20}
           value="abc"
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
         />
       </FormGroup>
     </Col>
@@ -135,7 +145,7 @@ exports[`Translator input data updates state when input data is invalid 1`] = `
           className="App-textarea"
           componentClass="textarea"
           readOnly={true}
-          rows={30}
+          rows={20}
           value=""
         />
       </FormGroup>
@@ -164,6 +174,7 @@ exports[`Translator input data updates state when input data is valid 1`] = `
       <FormGroup
         bsClass="form-group"
         controlId="jsonTextArea"
+        validationState="success"
       >
         <FormControl
           bsClass="form-control"
@@ -171,8 +182,12 @@ exports[`Translator input data updates state when input data is valid 1`] = `
           componentClass="textarea"
           onChange={[Function]}
           placeholder="Paste json data here..."
-          rows={30}
+          rows={20}
           value="{\\"some\\": \\"json\\"}"
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
         />
       </FormGroup>
     </Col>
@@ -207,7 +222,7 @@ exports[`Translator input data updates state when input data is valid 1`] = `
           className="App-textarea"
           componentClass="textarea"
           readOnly={true}
-          rows={30}
+          rows={20}
           value=""
         />
       </FormGroup>
@@ -236,6 +251,7 @@ exports[`Translator translate data updates state with translation result 1`] = `
       <FormGroup
         bsClass="form-group"
         controlId="jsonTextArea"
+        validationState="success"
       >
         <FormControl
           bsClass="form-control"
@@ -243,8 +259,12 @@ exports[`Translator translate data updates state with translation result 1`] = `
           componentClass="textarea"
           onChange={[Function]}
           placeholder="Paste json data here..."
-          rows={30}
+          rows={20}
           value="valid data"
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
         />
       </FormGroup>
     </Col>
@@ -279,7 +299,7 @@ exports[`Translator translate data updates state with translation result 1`] = `
           className="App-textarea"
           componentClass="textarea"
           readOnly={true}
-          rows={30}
+          rows={20}
           value=""
         />
       </FormGroup>

@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Button, Grid, Row, Col } from 'react-bootstrap'
 import apiUrl from '../../utils/apiUrl';
 import './Translator.css';
 
-const ROWS = 30;
+const ROWS = 20;
 
 class Translator extends Component {
   constructor(props) {
@@ -36,11 +36,13 @@ class Translator extends Component {
       .then(result => this.setState({ result }));
   };
 
+  validateState = () => this.state.data ? this.state.valid ? 'success' : 'error' : null;
+
   render = () =>
     <Grid className="App-grid">
       <Row className="show-grid">
         <Col md={5}>
-          <FormGroup controlId="jsonTextArea">
+          <FormGroup controlId="jsonTextArea" validationState={this.validateState()}>
             <FormControl
               componentClass="textarea"
               className="App-textarea"
@@ -49,6 +51,7 @@ class Translator extends Component {
               value={this.state.data}
               onChange={this.onChange}
             />
+            <FormControl.Feedback />
           </FormGroup>
         </Col>
         <Col md={2} className="App-convert">
