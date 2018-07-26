@@ -30,10 +30,22 @@ class Translator extends Component {
     });
   };
 
+  handleErrors = response => {
+    if (!response.ok) {
+      throw Error();
+    }
+
+    return response;
+  };
+
   translate = () => {
     fetch(`${apiUrl()}/translate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: this.state.data })
+      .then(this.handleErrors)
       .then(response => response.text())
-      .then(result => this.setState({ result }));
+      .then(result => this.setState({ result, resultStatus: 'success' }))
+      .catch(() => this.setState({
+        result: 'I was beaten by your json, please report a bug with the json.', resultStatus: 'error'
+      }));
   };
 
   validateState = () => this.state.data ? this.state.valid ? 'success' : 'error' : null;
@@ -63,7 +75,7 @@ class Translator extends Component {
           </Button>
         </Col>
         <Col md={5}>
-          <FormGroup controlId="swaggerTextArea">
+          <FormGroup controlId="swaggerTextArea" validationState={this.state.resultStatus}>
             <FormControl
               componentClass="textarea"
               className="App-textarea"
@@ -71,6 +83,7 @@ class Translator extends Component {
               readOnly
               value={this.state.result}
             />
+            <FormControl.Feedback />
           </FormGroup>
         </Col>
       </Row>

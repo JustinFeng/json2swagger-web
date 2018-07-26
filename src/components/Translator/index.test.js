@@ -41,23 +41,41 @@ describe('Translator', () => {
   });
 
   describe('translate data', () => {
-    beforeEach(() => {
-      fetch = jest.fn().mockReturnValue(Promise.resolve({ text: () => 'result' }));
+    describe('successful', () => {
+      beforeEach(() => {
+        fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: true, text: () => 'result' }));
 
-      translator.setState({ data: 'valid data', valid: true, result: '' });
-      translator.find('Button').simulate('click');
+        translator.setState({ data: 'valid data', valid: true, result: '' });
+        translator.find('Button').simulate('click');
+      });
+
+      it('calls translate api with input data', () => {
+        expect(fetch.mock.calls.length).toBe(1);
+        expect(fetch.mock.calls[0][0]).toEqual('http://localhost:9292/translate');
+        expect(fetch.mock.calls[0][1].method).toEqual('POST');
+        expect(fetch.mock.calls[0][1].body).toEqual('valid data');
+      });
+
+      it('updates state with translation result', () => {
+        expect(translator.state('result')).toEqual('result');
+        expect(translator.state('resultStatus')).toEqual('success');
+        expect(translator).toMatchSnapshot();
+      });
     });
 
-    it('calls translate api with input data', () => {
-      expect(fetch.mock.calls.length).toBe(1);
-      expect(fetch.mock.calls[0][0]).toEqual('http://localhost:9292/translate');
-      expect(fetch.mock.calls[0][1].method).toEqual('POST');
-      expect(fetch.mock.calls[0][1].body).toEqual('valid data');
-    });
+    describe('unsuccessful', () => {
+      beforeEach(() => {
+        fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: false, text: () => 'result' }));
 
-    it('updates state with translation result', () => {
-      expect(translator.state('result')).toEqual('result');
-      expect(translator).toMatchSnapshot();
+        translator.setState({ data: 'valid data', valid: true, result: '' });
+        translator.find('Button').simulate('click');
+      });
+
+      it('updates state with error message', () => {
+        expect(translator.state('result')).toEqual('I was beaten by your json, please report a bug with the json.');
+        expect(translator.state('resultStatus')).toEqual('error');
+        expect(translator).toMatchSnapshot();
+      });
     });
   });
 });

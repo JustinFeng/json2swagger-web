@@ -71,6 +71,10 @@ exports[`Translator initialize renders 1`] = `
           rows={20}
           value=""
         />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
       </FormGroup>
     </Col>
   </Row>
@@ -147,6 +151,10 @@ exports[`Translator input data updates state when input data is invalid 1`] = `
           readOnly={true}
           rows={20}
           value=""
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
         />
       </FormGroup>
     </Col>
@@ -225,13 +233,17 @@ exports[`Translator input data updates state when input data is valid 1`] = `
           rows={20}
           value=""
         />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
       </FormGroup>
     </Col>
   </Row>
 </Grid>
 `;
 
-exports[`Translator translate data updates state with translation result 1`] = `
+exports[`Translator translate data successful updates state with translation result 1`] = `
 <Grid
   bsClass="container"
   className="App-grid"
@@ -301,6 +313,91 @@ exports[`Translator translate data updates state with translation result 1`] = `
           readOnly={true}
           rows={20}
           value=""
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
+      </FormGroup>
+    </Col>
+  </Row>
+</Grid>
+`;
+
+exports[`Translator translate data unsuccessful updates state with error message 1`] = `
+<Grid
+  bsClass="container"
+  className="App-grid"
+  componentClass="div"
+  fluid={false}
+>
+  <Row
+    bsClass="row"
+    className="show-grid"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={5}
+    >
+      <FormGroup
+        bsClass="form-group"
+        controlId="jsonTextArea"
+        validationState="success"
+      >
+        <FormControl
+          bsClass="form-control"
+          className="App-textarea"
+          componentClass="textarea"
+          onChange={[Function]}
+          placeholder="Paste json data here..."
+          rows={20}
+          value="valid data"
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
+      </FormGroup>
+    </Col>
+    <Col
+      bsClass="col"
+      className="App-convert"
+      componentClass="div"
+      md={2}
+    >
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="success"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Translate
+      </Button>
+    </Col>
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={5}
+    >
+      <FormGroup
+        bsClass="form-group"
+        controlId="swaggerTextArea"
+      >
+        <FormControl
+          bsClass="form-control"
+          className="App-textarea"
+          componentClass="textarea"
+          readOnly={true}
+          rows={20}
+          value=""
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
         />
       </FormGroup>
     </Col>
