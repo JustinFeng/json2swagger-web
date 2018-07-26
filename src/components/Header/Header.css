@@ -1,10 +1,10 @@
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #2980b9;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 4em;
+  margin: 10px auto;
+  font-size: 3em;
 }
