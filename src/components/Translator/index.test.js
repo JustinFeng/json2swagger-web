@@ -46,7 +46,7 @@ describe('Translator', () => {
         fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: true, text: () => 'result' }));
 
         translator.setState({ data: 'valid data', valid: true, result: '' });
-        translator.find('Button').simulate('click');
+        translator.find('Button').at(0).simulate('click');
       });
 
       it('calls translate api with input data', () => {
@@ -68,7 +68,7 @@ describe('Translator', () => {
         fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: false, text: () => 'result' }));
 
         translator.setState({ data: 'valid data', valid: true, result: '' });
-        translator.find('Button').simulate('click');
+        translator.find('Button').at(0).simulate('click');
       });
 
       it('updates state with error message', () => {

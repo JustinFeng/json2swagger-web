@@ -76,6 +76,23 @@ exports[`Translator initialize renders 1`] = `
           bsRole="feedback"
         />
       </FormGroup>
+      <CopyToClipboard
+        className="App-copy undefined"
+        text=""
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="copy"
+          />
+        </Button>
+      </CopyToClipboard>
     </Col>
   </Row>
 </Grid>
@@ -157,6 +174,23 @@ exports[`Translator input data updates state when input data is invalid 1`] = `
           bsRole="feedback"
         />
       </FormGroup>
+      <CopyToClipboard
+        className="App-copy undefined"
+        text=""
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="copy"
+          />
+        </Button>
+      </CopyToClipboard>
     </Col>
   </Row>
 </Grid>
@@ -238,6 +272,23 @@ exports[`Translator input data updates state when input data is valid 1`] = `
           bsRole="feedback"
         />
       </FormGroup>
+      <CopyToClipboard
+        className="App-copy undefined"
+        text=""
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="copy"
+          />
+        </Button>
+      </CopyToClipboard>
     </Col>
   </Row>
 </Grid>
@@ -319,6 +370,23 @@ exports[`Translator translate data successful updates state with translation res
           bsRole="feedback"
         />
       </FormGroup>
+      <CopyToClipboard
+        className="App-copy undefined"
+        text=""
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="copy"
+          />
+        </Button>
+      </CopyToClipboard>
     </Col>
   </Row>
 </Grid>
@@ -400,6 +468,23 @@ exports[`Translator translate data unsuccessful updates state with error message
           bsRole="feedback"
         />
       </FormGroup>
+      <CopyToClipboard
+        className="App-copy undefined"
+        text=""
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="copy"
+          />
+        </Button>
+      </CopyToClipboard>
     </Col>
   </Row>
 </Grid>

@@ -9,3 +9,14 @@
 .App-convert {
   line-height: 414px;
 }
+
+.App-copy {
+  display: none;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+.App-copy.success {
+  display: block;
+}

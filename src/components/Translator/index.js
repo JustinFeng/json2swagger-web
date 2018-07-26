@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import { FormGroup, FormControl, Button, Grid, Row, Col } from 'react-bootstrap';
+import { FormGroup, FormControl, Button, Grid, Row, Col, Glyphicon } from 'react-bootstrap';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import apiUrl from '../../utils/apiUrl';
 import './Translator.css';
 
@@ -85,6 +86,11 @@ class Translator extends Component {
             />
             <FormControl.Feedback />
           </FormGroup>
+          <CopyToClipboard text={this.state.result} className={`App-copy ${this.state.resultStatus}`}>
+            <Button>
+              <Glyphicon glyph="copy" />
+            </Button>
+          </CopyToClipboard>
         </Col>
       </Row>
     </Grid>
