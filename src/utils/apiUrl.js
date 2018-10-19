@@ -1,5 +1,5 @@
 const apiUrl = () => {
-  let api = 'http://json2swagger-api.herokuapp.com';
+  let api = 'https://json2swagger-api.herokuapp.com';
 
   if (window.location.hostname === 'localhost') {
     api = 'http://localhost:9292';
