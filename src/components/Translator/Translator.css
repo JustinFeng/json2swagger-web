@@ -4,6 +4,8 @@
 
 .App-textarea {
   resize: vertical;
+  font-family: monospace;
+  font-size: 14px;
 }
 
 .App-convert {
