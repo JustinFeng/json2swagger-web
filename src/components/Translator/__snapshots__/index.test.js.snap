@@ -363,7 +363,7 @@ exports[`Translator translate data successful updates state with translation res
           componentClass="textarea"
           readOnly={true}
           rows={20}
-          value=""
+          value="loading..."
         />
         <FormControlFeedback
           bsClass="form-control-feedback"
@@ -461,7 +461,7 @@ exports[`Translator translate data unsuccessful updates state with error message
           componentClass="textarea"
           readOnly={true}
           rows={20}
-          value=""
+          value="loading..."
         />
         <FormControlFeedback
           bsClass="form-control-feedback"

@@ -11,7 +11,7 @@ describe('Translator', () => {
 
   describe('initialize', () => {
     it('renders', () => {
-      expect(translator.state()).toEqual({ data: '', valid: false, result: '' });
+      expect(translator.state()).toEqual({ data: '', valid: false, result: '', loading: false });
       expect(translator).toMatchSnapshot();
     });
   });
@@ -45,7 +45,7 @@ describe('Translator', () => {
       beforeEach(() => {
         fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: true, text: () => 'result' }));
 
-        translator.setState({ data: 'valid data', valid: true, result: '' });
+        translator.setState({ data: 'valid data', valid: true, result: '', loading: false });
         translator.find('Button').at(0).simulate('click');
       });
 
@@ -67,7 +67,7 @@ describe('Translator', () => {
       beforeEach(() => {
         fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: false, text: () => 'result' }));
 
-        translator.setState({ data: 'valid data', valid: true, result: '' });
+        translator.setState({ data: 'valid data', valid: true, result: '', loading: false });
         translator.find('Button').at(0).simulate('click');
       });
 

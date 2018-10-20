@@ -10,7 +10,7 @@ const ROWS = 20;
 class Translator extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: '', valid: false, result: '' };
+    this.state = { data: '', valid: false, result: '', loading: false };
   }
 
   validate = data => {
@@ -32,6 +32,7 @@ class Translator extends Component {
   };
 
   handleErrors = response => {
+    this.setState({ loading: false });
     if (!response.ok) {
       throw Error();
     }
@@ -40,6 +41,7 @@ class Translator extends Component {
   };
 
   translate = () => {
+    this.setState({ loading: true });
     fetch(`${apiUrl()}/translate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: this.state.data })
       .then(this.handleErrors)
       .then(response => response.text())
@@ -82,7 +84,7 @@ class Translator extends Component {
               className="App-textarea"
               rows={ROWS}
               readOnly
-              value={this.state.result}
+              value={this.state.loading ? 'loading...' : this.state.result}
             />
             <FormControl.Feedback />
           </FormGroup>
