@@ -10,7 +10,7 @@ const ROWS = 20;
 class Translator extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: '', valid: false, result: '', loading: false };
+    this.state = { data: '', valid: false, result: '', loading: false, format: 'yaml' };
   }
 
   validate = data => {
@@ -31,6 +31,13 @@ class Translator extends Component {
     });
   };
 
+  onSelect = e => {
+    const format = e.target.value;
+    this.setState({
+      format
+    });
+  }
+
   handleErrors = response => {
     this.setState({ loading: false });
     if (!response.ok) {
@@ -42,7 +49,9 @@ class Translator extends Component {
 
   translate = () => {
     this.setState({ loading: true });
-    fetch(`${apiUrl()}/translate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: this.state.data })
+    const headers = { 'Content-Type': 'application/json', 'Accept': `application/${this.state.format}` };
+
+    fetch(`${apiUrl()}/translate`, { method: 'POST', headers, body: this.state.data })
       .then(this.handleErrors)
       .then(response => response.text())
       .then(result => this.setState({ result, resultStatus: 'success' }))
@@ -57,9 +66,9 @@ class Translator extends Component {
     <Col md={2} className="App-convert">
       <FormGroup controlId="translate" className="App-translate">
         <ControlLabel className="App-format-label">Format:</ControlLabel>
-        <FormControl componentClass="select" className="App-format">
-          <option value="json">JSON</option>
+        <FormControl componentClass="select" className="App-format" onChange={this.onSelect}>
           <option value="yaml">YAML</option>
+          <option value="json">JSON</option>
         </FormControl>
         <Button
           className="App-translate-button"

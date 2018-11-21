@@ -11,7 +11,7 @@ describe('Translator', () => {
 
   describe('initialize', () => {
     it('renders', () => {
-      expect(translator.state()).toEqual({ data: '', valid: false, result: '', loading: false });
+      expect(translator.state()).toEqual({ data: '', valid: false, result: '', loading: false, format: 'yaml' });
       expect(translator).toMatchSnapshot();
     });
   });
@@ -20,7 +20,7 @@ describe('Translator', () => {
     let input;
 
     beforeEach(() => {
-      input = translator.find('FormControl').at(0)
+      input = translator.find('FormControl').at(0);
     });
 
     it('updates state when input data is invalid', () => {
@@ -40,32 +40,70 @@ describe('Translator', () => {
     });
   });
 
+  describe('format', () => {
+    let select;
+
+    beforeEach(() => {
+      select = translator.find('FormControl').at(1);
+    })
+
+    it('updates state when json format selected', () => {
+      select.simulate('change', { target: { value: 'json' }});
+
+      expect(translator.state('format')).toEqual('json');
+      expect(translator).toMatchSnapshot();
+    });
+  });
+
   describe('translate data', () => {
     describe('successful', () => {
-      beforeEach(() => {
-        fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: true, text: () => 'result' }));
+      let promise;
 
-        translator.setState({ data: 'valid data', valid: true, result: '', loading: false });
-        translator.find('Button').at(0).simulate('click');
+      beforeEach(() => {
+        promise = Promise.resolve({ ok: true, text: () => 'result' });
+        fetch = jest.fn().mockReturnValue(promise);
       });
 
-      it('calls translate api with input data', () => {
+      it('calls translate api with input data when expected format is yaml', () => {
+        translator.setState({ data: 'valid data', valid: true, result: '', loading: false, format: 'yaml' });
+        translator.find('Button').at(0).simulate('click');
+
         expect(fetch.mock.calls.length).toBe(1);
         expect(fetch.mock.calls[0][0]).toEqual('http://localhost:9292/translate');
         expect(fetch.mock.calls[0][1].method).toEqual('POST');
+        expect(fetch.mock.calls[0][1].headers).toEqual({ 'Content-Type': 'application/json', 'Accept': 'application/yaml' });
+        expect(fetch.mock.calls[0][1].body).toEqual('valid data');
+      });
+
+      it('calls translate api with input data when expected format is json', () => {
+        translator.setState({ data: 'valid data', valid: true, result: '', loading: false, format: 'json' });
+        translator.find('Button').at(0).simulate('click');
+
+        expect(fetch.mock.calls.length).toBe(1);
+        expect(fetch.mock.calls[0][0]).toEqual('http://localhost:9292/translate');
+        expect(fetch.mock.calls[0][1].method).toEqual('POST');
+        expect(fetch.mock.calls[0][1].headers).toEqual({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
         expect(fetch.mock.calls[0][1].body).toEqual('valid data');
       });
 
       it('updates state with translation result', () => {
-        expect(translator.state('result')).toEqual('result');
-        expect(translator.state('resultStatus')).toEqual('success');
-        expect(translator).toMatchSnapshot();
+        translator.setState({ data: 'valid data', valid: true, result: '', loading: false, format: 'yaml' });
+        translator.find('Button').at(0).simulate('click');
+
+        promise.then().then().then(() => {
+          expect(translator.state('result')).toEqual('result');
+          expect(translator.state('resultStatus')).toEqual('success');
+          expect(translator).toMatchSnapshot();
+        });
       });
     });
 
     describe('unsuccessful', () => {
+      let promise;
+
       beforeEach(() => {
-        fetch = jest.fn().mockReturnValue(Promise.resolve({ ok: false, text: () => 'result' }));
+        promise = Promise.resolve({ ok: false, text: () => 'result' });
+        fetch = jest.fn().mockReturnValue(promise);
 
         translator.setState({ data: 'valid data', valid: true, result: '', loading: false });
         translator.find('Button').at(0).simulate('click');

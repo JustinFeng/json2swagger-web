@@ -1,5 +1,134 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Translator format updates state when json format selected 1`] = `
+<Grid
+  bsClass="container"
+  className="App-grid"
+  componentClass="div"
+  fluid={false}
+>
+  <Row
+    bsClass="row"
+    className="show-grid"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={5}
+    >
+      <FormGroup
+        bsClass="form-group"
+        controlId="jsonTextArea"
+        validationState={null}
+      >
+        <FormControl
+          bsClass="form-control"
+          className="App-textarea"
+          componentClass="textarea"
+          onChange={[Function]}
+          placeholder="Paste json data here..."
+          rows={20}
+          value=""
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
+      </FormGroup>
+    </Col>
+    <Col
+      bsClass="col"
+      className="App-convert"
+      componentClass="div"
+      md={2}
+    >
+      <FormGroup
+        bsClass="form-group"
+        className="App-translate"
+        controlId="translate"
+      >
+        <ControlLabel
+          bsClass="control-label"
+          className="App-format-label"
+          srOnly={false}
+        >
+          Format:
+        </ControlLabel>
+        <FormControl
+          bsClass="form-control"
+          className="App-format"
+          componentClass="select"
+          onChange={[Function]}
+        >
+          <option
+            value="yaml"
+          >
+            YAML
+          </option>
+          <option
+            value="json"
+          >
+            JSON
+          </option>
+        </FormControl>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="success"
+          className="App-translate-button"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Translate
+        </Button>
+      </FormGroup>
+    </Col>
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={5}
+    >
+      <FormGroup
+        bsClass="form-group"
+        controlId="swaggerTextArea"
+      >
+        <FormControl
+          bsClass="form-control"
+          className="App-textarea"
+          componentClass="textarea"
+          readOnly={true}
+          rows={20}
+          value=""
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
+      </FormGroup>
+      <CopyToClipboard
+        className="App-copy undefined"
+        text=""
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="copy"
+          />
+        </Button>
+      </CopyToClipboard>
+    </Col>
+  </Row>
+</Grid>
+`;
+
 exports[`Translator initialize renders 1`] = `
 <Grid
   bsClass="container"
@@ -59,16 +188,17 @@ exports[`Translator initialize renders 1`] = `
           bsClass="form-control"
           className="App-format"
           componentClass="select"
+          onChange={[Function]}
         >
-          <option
-            value="json"
-          >
-            JSON
-          </option>
           <option
             value="yaml"
           >
             YAML
+          </option>
+          <option
+            value="json"
+          >
+            JSON
           </option>
         </FormControl>
         <Button
@@ -187,16 +317,17 @@ exports[`Translator input data updates state when input data is invalid 1`] = `
           bsClass="form-control"
           className="App-format"
           componentClass="select"
+          onChange={[Function]}
         >
-          <option
-            value="json"
-          >
-            JSON
-          </option>
           <option
             value="yaml"
           >
             YAML
+          </option>
+          <option
+            value="json"
+          >
+            JSON
           </option>
         </FormControl>
         <Button
@@ -315,16 +446,17 @@ exports[`Translator input data updates state when input data is valid 1`] = `
           bsClass="form-control"
           className="App-format"
           componentClass="select"
+          onChange={[Function]}
         >
-          <option
-            value="json"
-          >
-            JSON
-          </option>
           <option
             value="yaml"
           >
             YAML
+          </option>
+          <option
+            value="json"
+          >
+            JSON
           </option>
         </FormControl>
         <Button
@@ -443,16 +575,17 @@ exports[`Translator translate data successful updates state with translation res
           bsClass="form-control"
           className="App-format"
           componentClass="select"
+          onChange={[Function]}
         >
-          <option
-            value="json"
-          >
-            JSON
-          </option>
           <option
             value="yaml"
           >
             YAML
+          </option>
+          <option
+            value="json"
+          >
+            JSON
           </option>
         </FormControl>
         <Button
@@ -571,16 +704,17 @@ exports[`Translator translate data unsuccessful updates state with error message
           bsClass="form-control"
           className="App-format"
           componentClass="select"
+          onChange={[Function]}
         >
-          <option
-            value="json"
-          >
-            JSON
-          </option>
           <option
             value="yaml"
           >
             YAML
+          </option>
+          <option
+            value="json"
+          >
+            JSON
           </option>
         </FormControl>
         <Button
