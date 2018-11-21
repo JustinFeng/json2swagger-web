@@ -8,8 +8,21 @@
   font-size: 14px;
 }
 
-.App-convert {
-  line-height: 414px;
+.App-format {
+  display: inline-block;
+  width: 60%;
+}
+
+.App-format-label {
+  margin-right: 10px;
+}
+
+.App-translate {
+  margin-top: 170px;
+}
+
+.App-translate-button {
+  margin-top: 20px;
 }
 
 .App-copy {

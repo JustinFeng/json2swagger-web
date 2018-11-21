@@ -43,16 +43,46 @@ exports[`Translator initialize renders 1`] = `
       componentClass="div"
       md={2}
     >
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="success"
-        disabled={true}
-        onClick={[Function]}
+      <FormGroup
+        bsClass="form-group"
+        className="App-translate"
+        controlId="translate"
       >
-        Translate
-      </Button>
+        <ControlLabel
+          bsClass="control-label"
+          className="App-format-label"
+          srOnly={false}
+        >
+          Format:
+        </ControlLabel>
+        <FormControl
+          bsClass="form-control"
+          className="App-format"
+          componentClass="select"
+        >
+          <option
+            value="json"
+          >
+            JSON
+          </option>
+          <option
+            value="yaml"
+          >
+            YAML
+          </option>
+        </FormControl>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="success"
+          className="App-translate-button"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Translate
+        </Button>
+      </FormGroup>
     </Col>
     <Col
       bsClass="col"
@@ -141,16 +171,46 @@ exports[`Translator input data updates state when input data is invalid 1`] = `
       componentClass="div"
       md={2}
     >
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="success"
-        disabled={true}
-        onClick={[Function]}
+      <FormGroup
+        bsClass="form-group"
+        className="App-translate"
+        controlId="translate"
       >
-        Translate
-      </Button>
+        <ControlLabel
+          bsClass="control-label"
+          className="App-format-label"
+          srOnly={false}
+        >
+          Format:
+        </ControlLabel>
+        <FormControl
+          bsClass="form-control"
+          className="App-format"
+          componentClass="select"
+        >
+          <option
+            value="json"
+          >
+            JSON
+          </option>
+          <option
+            value="yaml"
+          >
+            YAML
+          </option>
+        </FormControl>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="success"
+          className="App-translate-button"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Translate
+        </Button>
+      </FormGroup>
     </Col>
     <Col
       bsClass="col"
@@ -239,16 +299,46 @@ exports[`Translator input data updates state when input data is valid 1`] = `
       componentClass="div"
       md={2}
     >
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="success"
-        disabled={false}
-        onClick={[Function]}
+      <FormGroup
+        bsClass="form-group"
+        className="App-translate"
+        controlId="translate"
       >
-        Translate
-      </Button>
+        <ControlLabel
+          bsClass="control-label"
+          className="App-format-label"
+          srOnly={false}
+        >
+          Format:
+        </ControlLabel>
+        <FormControl
+          bsClass="form-control"
+          className="App-format"
+          componentClass="select"
+        >
+          <option
+            value="json"
+          >
+            JSON
+          </option>
+          <option
+            value="yaml"
+          >
+            YAML
+          </option>
+        </FormControl>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="success"
+          className="App-translate-button"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Translate
+        </Button>
+      </FormGroup>
     </Col>
     <Col
       bsClass="col"
@@ -337,16 +427,46 @@ exports[`Translator translate data successful updates state with translation res
       componentClass="div"
       md={2}
     >
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="success"
-        disabled={false}
-        onClick={[Function]}
+      <FormGroup
+        bsClass="form-group"
+        className="App-translate"
+        controlId="translate"
       >
-        Translate
-      </Button>
+        <ControlLabel
+          bsClass="control-label"
+          className="App-format-label"
+          srOnly={false}
+        >
+          Format:
+        </ControlLabel>
+        <FormControl
+          bsClass="form-control"
+          className="App-format"
+          componentClass="select"
+        >
+          <option
+            value="json"
+          >
+            JSON
+          </option>
+          <option
+            value="yaml"
+          >
+            YAML
+          </option>
+        </FormControl>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="success"
+          className="App-translate-button"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Translate
+        </Button>
+      </FormGroup>
     </Col>
     <Col
       bsClass="col"
@@ -435,16 +555,46 @@ exports[`Translator translate data unsuccessful updates state with error message
       componentClass="div"
       md={2}
     >
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="success"
-        disabled={false}
-        onClick={[Function]}
+      <FormGroup
+        bsClass="form-group"
+        className="App-translate"
+        controlId="translate"
       >
-        Translate
-      </Button>
+        <ControlLabel
+          bsClass="control-label"
+          className="App-format-label"
+          srOnly={false}
+        >
+          Format:
+        </ControlLabel>
+        <FormControl
+          bsClass="form-control"
+          className="App-format"
+          componentClass="select"
+        >
+          <option
+            value="json"
+          >
+            JSON
+          </option>
+          <option
+            value="yaml"
+          >
+            YAML
+          </option>
+        </FormControl>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="success"
+          className="App-translate-button"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Translate
+        </Button>
+      </FormGroup>
     </Col>
     <Col
       bsClass="col"

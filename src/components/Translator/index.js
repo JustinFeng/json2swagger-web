@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import { FormGroup, FormControl, Button, Grid, Row, Col, Glyphicon } from 'react-bootstrap';
+import { FormGroup, FormControl, Button, Grid, Row, Col, Glyphicon, ControlLabel } from 'react-bootstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import apiUrl from '../../utils/apiUrl';
 import './Translator.css';
@@ -53,6 +53,24 @@ class Translator extends Component {
 
   validateState = () => this.state.data ? this.state.valid ? 'success' : 'error' : null;
 
+  renderConvert = () =>
+    <Col md={2} className="App-convert">
+      <FormGroup controlId="translate" className="App-translate">
+        <ControlLabel className="App-format-label">Format:</ControlLabel>
+        <FormControl componentClass="select" className="App-format">
+          <option value="json">JSON</option>
+          <option value="yaml">YAML</option>
+        </FormControl>
+        <Button
+          className="App-translate-button"
+          bsStyle="success"
+          disabled={!this.state.valid}
+          onClick={this.translate}>
+          Translate
+        </Button>
+      </FormGroup>
+    </Col>
+
   render = () =>
     <Grid className="App-grid">
       <Row className="show-grid">
@@ -69,14 +87,7 @@ class Translator extends Component {
             <FormControl.Feedback />
           </FormGroup>
         </Col>
-        <Col md={2} className="App-convert">
-          <Button
-            bsStyle="success"
-            disabled={!this.state.valid}
-            onClick={this.translate}>
-            Translate
-          </Button>
-        </Col>
+        { this.renderConvert() }
         <Col md={5}>
           <FormGroup controlId="swaggerTextArea" validationState={this.state.resultStatus}>
             <FormControl
