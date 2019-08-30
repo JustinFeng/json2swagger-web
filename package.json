@@ -2,7 +2,7 @@
   "name": "json2swagger-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://json2swagger.iamrubyist.com",
+  "homepage": "https://justinfeng.github.io/json2swagger-web/",
   "dependencies": {
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
